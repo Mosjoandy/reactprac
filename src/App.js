@@ -1,26 +1,21 @@
-import React, { Fragment } from 'react';
-import { CssBaseline, withStyles } from '@material-ui/core';
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import NavTabs from "./components/NavTabs";
+import Home from "./components/pages/Home";
+import About from "./components/pages/About";
+import Blog from "./components/pages/Blog";
+import Contact from "./components/pages/Contact";
 
-import AppHeader from './components/AppHeader';
-import Home from './pages/Home';
-
-const styles = theme => ({
-  main: {
-    padding: 3 * theme.spacing.unit,
-    [theme.breakpoints.down('xs')]: {
-      padding: 2 * theme.spacing.unit,
-    },
-  },
-});
-
-const App = ({ classes }) => (
-  <Fragment>
-    <CssBaseline />
-    <AppHeader />
-    <main className={classes.main}>
-      <Home />
-    </main>
-  </Fragment>
+const App = () => (
+  <Router>
+    <div>
+      <NavTabs />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/about" component={About} />
+      <Route exact path="/blog" component={Blog} />
+      <Route path="/contact" component={Contact} />
+    </div>
+  </Router>
 );
 
-export default withStyles(styles)(App);
+export default App;
