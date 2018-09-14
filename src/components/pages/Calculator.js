@@ -1,6 +1,6 @@
 import React from "react";
 
-const Blog = () => (
+const Calculator = () => (
   <div>
     <h1>Blog Page</h1>
     <p>
@@ -9,4 +9,4 @@ const Blog = () => (
   </div>
 );
 
-export default Blog;
+export default Calculator;

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import NavTabs from "./components/NavTabs";
 import Home from "./components/pages/Home";
 import ToDoApp from "./components/pages/ToDoApp";
-import Blog from "./components/pages/Blog";
+import Calculator from "./components/pages/Calculator";
 import Contact from "./components/pages/Contact";
 
 const App = () => (
@@ -12,7 +12,7 @@ const App = () => (
       <NavTabs />
       <Route exact path="/" component={Home} />
       <Route exact path="/toDoApp" component={ToDoApp} />
-      <Route exact path="/blog" component={Blog} />
+      <Route exact path="/calculator" component={Calculator} />
       <Route path="/contact" component={Contact} />
     </div>
   </Router>

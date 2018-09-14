@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import "./ToDoApp.css";
+
+// original task:
+
 /*
 	1. Add a new item
 	2. Mark as done
 	3. Delete from list
 */
 
+///////////////////initial pseudo code/////////////////////////////////////////////
 
 // state of line items that is an array
 // state of todo item boolean
@@ -124,6 +128,7 @@ class ToDoApp extends Component {
 
     return (
       <div>
+      <h1>To Do List Exercise</h1>
         {this.state.toDoItems.map((toDoItem, index) => (
           <li key={index}
             id={toDoItem}
