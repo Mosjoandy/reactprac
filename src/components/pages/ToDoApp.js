@@ -138,6 +138,7 @@ class ToDoApp extends Component {
               {toDoItem}
             </span>
             {/* <input type="checkbox" /> */}
+            {/* ^^^^^^ ABANDONED - original way to mark an item on the list as "done" */}
             <button type="button" onClick={() => this.destructoDisk(index)}>X</button>
           </li>
         ))}
