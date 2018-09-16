@@ -33,47 +33,43 @@ class Calculator extends React.Component {
     // console.log("Calculate you MONSTER");
     console.log("value1 = " + this.state.value1 + "\noperator = " + this.state.operator + "\nvalue2 = " + this.state.value2);
 
-    if (this.state.operator === "+") {
-      this.setState({ answer: parseInt(this.state.value1, 10) + parseInt(this.state.value2, 10)})
+    // if (this.state.operator === "+") {
+    //   this.setState({ answer: parseInt(this.state.value1, 10) + parseInt(this.state.value2, 10)})
 
-    } else if (this.state.operator === "-") {
-      this.setState({ answer: parseInt(this.state.value1, 10) - parseInt(this.state.value2, 10)})
+    // } else if (this.state.operator === "-") {
+    //   this.setState({ answer: parseInt(this.state.value1, 10) - parseInt(this.state.value2, 10)})
 
-    } else if (this.state.operator === "/") { 
-      this.setState({ answer: parseInt(this.state.value1, 10) / parseInt(this.state.value2, 10)})
+    // } else if (this.state.operator === "/") { 
+    //   this.setState({ answer: parseInt(this.state.value1, 10) / parseInt(this.state.value2, 10)})
 
-    } else if (this.state.operator === "*") {
-      this.setState({ answer: parseInt(this.state.value1, 10) * parseInt(this.state.value2, 10)}) 
+    // } else if (this.state.operator === "*") {
+    //   this.setState({ answer: parseInt(this.state.value1, 10) * parseInt(this.state.value2, 10)}) 
 
-    } else this.setState({ answer: "Pick these operators: +, -, /, *"})
+    // } else this.setState({ answer: "Pick these operators: +, -, /, *"})
 
-    console.log("Answer = " + this.state.answer)
-    // // var answer = parseInt(this.state.value1, 10) + parseInt(this.state.value2, 10);
-    // var answer = 0;
-    // switch (answer) {
-    //   case this.state.operator === "+":
-    //     var answer = (this.state.value1 + this.state.value2);
-    //     this.setState({ answer: answer })
-    //     break
-    //   case this.state.operator === "-":
-    //     var answer = (this.state.value1 - this.state.value2);
-    //     this.setState({ answer: answer })
-    //     break
-    //   case this.state.operator === "/":
-    //     var answer = (this.state.value1 / this.state.value2);
-    //     this.setState({ answer: answer })
-    //     break
-    //   case this.state.operator === "*":
-    //     var answer = (this.state.value1 * this.state.value2);
-    //     this.setState({ answer: answer })
-    //     break
-    //   default:
-    //     console.log("Pick these operators: +, -, /, *")
-    // }
+    const operator = this.state.operator;
+    const value1 = this.state.value1;
+    const value2 = this.state.value2;
+
+    switch (operator) {
+      case "+":
+        this.setState({ answer: value1 + value2 })
+        break
+      case "-":
+        this.setState({ answer: value1 - value2 })
+        break
+      case "/":
+        this.setState({ answer: value1 / value2 })
+        break
+      case "*":
+        this.setState({ answer: value1 * value2 })
+        break
+      default:
+        console.log("Pick these operators: +, -, /, *")
+    }
 
     // var answer = (parseInt(this.state.value1, 10) + parseInt(this.state.value2, 10))
     // console.log(this.state.value1 + "+" + this.state.value2+"="+answer);
-   
   };
 
   render() {
