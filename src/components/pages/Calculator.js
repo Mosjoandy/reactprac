@@ -10,23 +10,23 @@ class Calculator extends React.Component {
       answer: ""
     };
 
-    this.handleChange1 = this.handleChange1.bind(this);
-    this.handleChange2 = this.handleChange2.bind(this);
-    this.handleChange3 = this.handleChange3.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    // this.handleChange2 = this.handleChange2.bind(this);
+    // this.handleChange3 = this.handleChange3.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   };
 
-  handleChange1(event) {
-    this.setState({ value1: event.target.value });
+  handleChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
   };
 
-  handleChange2(event) {
-    this.setState({ value2: event.target.value });
-  };
+  // handleChange2(event) {
+  //   this.setState({ value2: event.target.value });
+  // };
 
-  handleChange3(event) {
-    this.setState({ operator: event.target.value });
-  };
+  // handleChange3(event) {
+  //   this.setState({ operator: event.target.value });
+  // };
 
   handleSubmit(event) {
     event.preventDefault();
@@ -48,25 +48,26 @@ class Calculator extends React.Component {
     // } else this.setState({ answer: "Pick these operators: +, -, /, *"})
 
     const operator = this.state.operator;
-    const value1 = this.state.value1;
-    const value2 = this.state.value2;
+    const value1 = parseInt(this.state.value1, 10);
+    const value2 = parseInt(this.state.value2, 10);
 
     switch (operator) {
       case "+":
-        this.setState({ answer: value1 + value2 })
+        this.setState({ answer: value1 + value2 });
         break
       case "-":
-        this.setState({ answer: value1 - value2 })
+        this.setState({ answer: value1 - value2 });
         break
       case "/":
-        this.setState({ answer: value1 / value2 })
+        this.setState({ answer: value1 / value2 });
         break
       case "*":
-        this.setState({ answer: value1 * value2 })
+        this.setState({ answer: value1 * value2 });
         break
       default:
-        console.log("Pick these operators: +, -, /, *")
-    }
+        console.log("Pick these operators: +, -, /, *");
+        this.setState({ answer: "Pick these operators: +, -, /, *" });
+    };
 
     // var answer = (parseInt(this.state.value1, 10) + parseInt(this.state.value2, 10))
     // console.log(this.state.value1 + "+" + this.state.value2+"="+answer);
@@ -79,15 +80,15 @@ class Calculator extends React.Component {
         <form onSubmit={this.handleSubmit}>
 
           <label>First Number</label>
-          <input type="number" value={this.state.value1} onChange={this.handleChange1} />
+          <input type="number" name="value1" onChange={this.handleChange} />
           <br />
 
           <label>Operator</label>
-          <input type="text" maxLength="1" size="1" value={this.state.operator} onChange={this.handleChange3} />
+          <input type="text" maxLength="1" size="1" name="operator" onChange={this.handleChange} />
           <br />
 
           <label>Second Number</label>
-          <input type="number" value={this.state.value2} onChange={this.handleChange2} />
+          <input type="number" name="value2" onChange={this.handleChange} />
           <br />
 
           <input type="submit" value="Submit" />
