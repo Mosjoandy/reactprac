@@ -83,7 +83,7 @@ class Calculator extends React.Component {
         this.setState({ answer: "Pick these operators: +, -, /, *" });
         // Telling users that they need to pick a real operator
     };
-
+    event.target.reset();
     // var answer = (parseInt(this.state.value1, 10) + parseInt(this.state.value2, 10))
     // ^^^^^^ ABANDONED - original parsing of answer prior to switch
   };
