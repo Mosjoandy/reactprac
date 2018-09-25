@@ -107,7 +107,8 @@ class Calculator extends React.Component {
           <input type="number" name="value2" onChange={this.handleChange} />
           <br />
 
-          <input type="submit" value="Submit" />
+          
+          <input type="submit" value="Calculate" />
 
         </form>
         <div>{this.state.value1} {this.state.operator} {this.state.value2} = {this.state.answer}</div>
