@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "./ToDoApp.css";
+import Fade from "react-reveal";
 
 // original task:
 
@@ -59,7 +60,7 @@ class ToDoApp extends Component {
 
   // fuction passing "event" to complete the submit form without reloading the page
   handleSubmit(event) {
-  
+
     // prevents reloading of page
     event.preventDefault();
 
@@ -98,7 +99,7 @@ class ToDoApp extends Component {
 
     // setting a new var with the entire toDoItems array
     var getCut = this.state.toDoItems;
-   
+
     // using the .splice method to target the index(from .map) and deleting "1" itemfrom that array
     getCut.splice(index, 1);
 
@@ -128,20 +129,25 @@ class ToDoApp extends Component {
 
     return (
       <div>
-      <h1>To Do List Exercise</h1>
+        <h1>To Do List Exercise</h1>
+
         {this.state.toDoItems.map((toDoItem, index) => (
-          <li key={index}
-            id={toDoItem}
-          // className={strike}
-          >
-            <span id={index} onClick={() => this.strike(index)}>
-              {toDoItem}
-            </span>
-            {/* <input type="checkbox" /> */}
-            {/* ^^^^^^ ABANDONED - original way to mark an item on the list as "done" */}
-            <button type="button" onClick={() => this.destructoDisk(index)}>X</button>
-          </li>
+          <Fade key={index} collapse bottom>
+            <div className="card col-md-2">
+              <li id={toDoItem}
+              // className={strike}
+              >
+                <span id={index} onClick={() => this.strike(index)}>
+                  {toDoItem}
+                </span>
+                {/* <input type="checkbox" /> */}
+                {/* ^^^^^^ ABANDONED - original way to mark an item on the list as "done" */}
+                <button type="button" onClick={() => this.destructoDisk(index)}>X</button>
+              </li>
+            </div>
+          </Fade>
         ))}
+
         <form onSubmit={this.handleSubmit}>
           <input type="text" value={this.state.value} onChange={this.handleChange} />
           <input type="submit" value="Submit" />
