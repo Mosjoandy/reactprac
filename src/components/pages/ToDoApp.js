@@ -132,7 +132,7 @@ class ToDoApp extends Component {
         <h1>To Do List Exercise</h1>
 
         {this.state.toDoItems.map((toDoItem, index) => (
-          <Fade key={index} collapse bottom>
+          <Fade key={index} collapse right>
             <div className="card col-md-2">
               <li id={toDoItem}
               // className={strike}
