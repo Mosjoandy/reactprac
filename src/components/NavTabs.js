@@ -15,6 +15,16 @@ const NavTabs = () => (
     </li>
     <li className="nav-item">
       <Link
+        to="/Login"
+        className={
+          window.location.pathname === "/Login" ? "nav-link active" : "nav-link"
+        }
+      >
+        Login
+      </Link>
+    </li>
+    <li className="nav-item">
+      <Link
         to="/Registration"
         className={
           window.location.pathname === "/Registration" ? "nav-link active" : "nav-link"
