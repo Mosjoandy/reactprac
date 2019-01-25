@@ -5,6 +5,7 @@ import Home from "./components/pages/Home";
 import ToDoApp from "./components/pages/ToDoApp";
 import Calculator from "./components/pages/Calculator";
 import Contact from "./components/pages/Contact";
+import Registration from "./components/pages/Registration";
 import Slide from "react-reveal";
 
 const App = () => (
@@ -17,6 +18,7 @@ const App = () => (
       </Slide>
       <Route exact path="/calculator" component={Calculator} />
       <Route path="/contact" component={Contact} />
+      <Route path="/registration" component={Registration} />
     </div>
   </Router>
 );
