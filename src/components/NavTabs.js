@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Logout from "./Logout";
 
-const NavTabs = () => (
+const NavTabs = (props) => (
   <ul className="nav nav-tabs">
-  <li className="nav-item">
+    <li className="nav-item">
       <Link
         to="/"
         className={
@@ -73,7 +74,24 @@ const NavTabs = () => (
         Learn
       </Link>
     </li>
+    {props.authenticated === true ?
+      <li className="nav-item">
+        <Logout />
+      </li>
+      :
+      <li className="nav-item">
+        <Link
+          to="/Login"
+          className={
+            window.location.pathname === "/Login" ? "nav-link active" : "nav-link"
+          }
+        >
+          Login
+      </Link>
+      </li>
+    }
   </ul>
+
 );
 
 export default NavTabs;
