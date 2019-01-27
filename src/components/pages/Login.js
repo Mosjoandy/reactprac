@@ -17,12 +17,13 @@ class Login extends Component {
         event.preventDefault();
         const { email, password } = this.state;
         firebase.auth().signInWithEmailAndPassword(email, password)
-            .then((user) => {
+            .then((result) => {
                 this.props.history.push('/');
             })
             .catch((error) => {
                 this.setState({ error: error });
             });
+          
     };
     render() {
         const { email, password, error } = this.state;

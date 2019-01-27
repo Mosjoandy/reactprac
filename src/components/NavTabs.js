@@ -74,7 +74,7 @@ const NavTabs = (props) => (
         Learn
       </Link>
     </li>
-    {props.authenticated === true ?
+    {/* {props.authenticated === true ?
       <li className="nav-item">
         <Logout />
       </li>
@@ -89,7 +89,7 @@ const NavTabs = (props) => (
           Login
       </Link>
       </li>
-    }
+    } */}
   </ul>
 
 );

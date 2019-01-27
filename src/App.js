@@ -11,26 +11,35 @@ import Slide from "react-reveal";
 import firebase from "./firebase";
 
 class App extends Component {
-  state = {
-    authenticated: false,
+  constructor() {
+    super()
+    this.state = {
+      authenticated: false,
+    };
+    this.checkUser = this.checkUser.bind(this);
   };
   componentDidMount() {
     firebase.auth().onAuthStateChanged((authenticated) => {
-      authenticated
-        ? this.setState(() => ({
+      authenticated ?
+        this.setState(() => ({
           authenticated: true,
         }))
         : this.setState(() => ({
           authenticated: false,
         }));
     });
-  }
-  
+  };
+
+  checkUser(authenticated) {
+    console.log(authenticated);
+  };
+
   render() {
     return (
       <Router>
         <div>
           <NavTabs authenticated={this.state.authenticated} />
+          <button onClick={this.checkUser}>Test</button>
           <Route exact path="/" component={Home} />
           <Slide bottom duration={1500}>
             <Route exact path="/toDoApp" component={ToDoApp} />
