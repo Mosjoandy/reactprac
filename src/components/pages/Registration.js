@@ -5,6 +5,7 @@ import firebase from "../../firebase"
 class Registration extends Component {
     state = {
         email: "",
+        ign: "",
         password: "",
         error: null,
 
@@ -16,7 +17,15 @@ class Registration extends Component {
         event.preventDefault();
         const { email, password } = this.state;
         firebase.auth().createUserWithEmailAndPassword(email, password)
-            .then((user) => {
+            .then((result) => {
+                const registeredUser = firebase.database().ref("users/"+result.user.uid);
+                const data = {
+                    userID: result.user.uid,
+                    email: this.state.email,
+                    ign: this.state.ign
+                }
+                registeredUser.push(data);
+
                 this.props.history.push('/');
             })
             .catch((error) => {
@@ -24,7 +33,7 @@ class Registration extends Component {
             });
     };
     render() {
-        const { email, password, error } = this.state;
+        const { email, password, ign, error } = this.state;
         return (
             <div>
                 <h1>Registration</h1>
@@ -39,6 +48,13 @@ class Registration extends Component {
                         name="password"
                         placeholder="Password"
                         value={password}
+                        onChange={this.handleInputChange}
+                    />
+                    <input
+                        type="text"
+                        name="ign"
+                        placeholder="Mosjoandy"
+                        value={ign}
                         onChange={this.handleInputChange}
                     />
                     <button children="Register" />

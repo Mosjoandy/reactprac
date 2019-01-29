@@ -29,6 +29,7 @@ class Home extends Component {
           userID: result.user.uid
         })
         console.log(result.user.uid)
+        console.log(this.state.userExists)
         this.props.history.push('/');
       })
       .catch((error) => {
@@ -56,6 +57,7 @@ class Home extends Component {
                 value={password}
                 onChange={this.handleInputChange}
               />
+              
               <button children="Log In" />
             </form>
           </div>
