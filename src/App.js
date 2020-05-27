@@ -7,6 +7,8 @@ import Calculator from "./components/pages/Calculator";
 import Contact from "./components/pages/Contact";
 import Login from "./components/pages/Login";
 import Registration from "./components/pages/Registration";
+import Page1 from "./components/pages/Page1";
+
 import Slide from "react-reveal";
 import firebase from "./firebase";
 
@@ -48,6 +50,7 @@ class App extends Component {
           <Route path="/contact" component={Contact} />
           <Route path="/registration" component={Registration} />
           <Route path="/login" component={Login} />
+          <Route path="/page1" component={Page1} />
         </div>
       </Router>
     );

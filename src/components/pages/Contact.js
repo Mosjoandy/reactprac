@@ -1,10 +1,10 @@
 import React from "react";
-import { Link, Route } from "react-router-dom";
-import Learn from "./Learn";
+// import { Link, Route } from "react-router-dom";
+// import Learn from "./Learn";
 
 const Contact = props => (
   <div>
-    <h1>Contact Page</h1>
+    {/* <h1>Contact Page</h1>
     <p>
     Contact page garbage click links below to toggle "learn.js"
     </p>
@@ -14,7 +14,7 @@ const Contact = props => (
     <Link to="/contact" role="button" className="btn btn-link">
       Learn Less
     </Link>
-    <Route exact path={`${props.match.url}/learn`} component={Learn} />
+    <Route exact path={`${props.match.url}/learn`} component={Learn} /> */}
   </div>
 );
 

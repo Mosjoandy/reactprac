@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Logout from "./Logout";
+// import Logout from "./Logout";
 
 const NavTabs = (props) => (
   <ul className="nav nav-tabs">
@@ -56,15 +56,15 @@ const NavTabs = (props) => (
     </li>
     <li className="nav-item">
       <Link
-        to="/contact"
+        to="/Page1"
         className={
-          window.location.pathname === "/contact" ? "nav-link active" : "nav-link"
+          window.location.pathname === "/Page1" ? "nav-link active" : "nav-link"
         }
       >
-        Contact
+        Page1
       </Link>
     </li>
-    <li className="nav-item">
+    {/* <li className="nav-item">
       <Link
         to="/contact/learn"
         className={
@@ -73,7 +73,7 @@ const NavTabs = (props) => (
       >
         Learn
       </Link>
-    </li>
+    </li> */}
     {/* {props.authenticated === true ?
       <li className="nav-item">
         <Logout />
